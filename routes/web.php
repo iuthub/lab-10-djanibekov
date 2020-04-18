@@ -26,7 +26,7 @@ Route::get('post/{id}/like', [
     'as' => 'blog.post.like'
 ]);
 
-Route::get('about', function () {
+Route::get('about', 'middleware'=>['auth'],function () {
     return view('other.about');
 })->name('other.about');
 
@@ -61,3 +61,6 @@ Route::group(['prefix' => 'admin'], function() {
         'as' => 'admin.update'
     ]);
 });
+Auth::routes();
+
+Route::get('/home', 'HomeController@index');

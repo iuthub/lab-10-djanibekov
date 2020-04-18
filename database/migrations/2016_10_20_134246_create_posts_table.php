@@ -20,7 +20,14 @@ class CreatePostsTable extends Migration
             $table->text('content');
         });
     }
-
+puplic function user_id()
+{Schema :: create ('posts ', function ( Blueprint $table ) {
+$table -> increments ('id ');
+$table -> timestamps ();
+$table -> string ('title ');
+$table -> text (' content ');
+});
+}
     /**
      * Reverse the migrations.
      *
@@ -31,3 +38,4 @@ class CreatePostsTable extends Migration
         Schema::drop('posts');
     }
 }
+
